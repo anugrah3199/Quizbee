@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title%}
+  Home
+{% endblock %}
+{% block content %}
+<fieldset style="width:500px; margin-left:400px;border-radius:10px; box-shadow: 5px 10px 18px grey;text-align:center;">
+<legend style="margin-left:100px;"><h1>Select Topic For Quiz </h1></legend>
+  {% for choice in choices %}
+  <ul style="list-style-type: none;">
+    <li><a href="/quiz/{{ choice }}"><button class="button button2" type="button" onclick="alert('You Are Going For {{ choice }} Quiz')"><h3 style="color:rgb(72,101,110);">{{ choice }}</h3></button></a></li>
+    </ul>
+  {% endfor %}
+  </fieldset>
+{% endblock %}

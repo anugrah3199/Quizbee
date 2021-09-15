@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title%}
+  Result
+{% endblock %}
+
+{% block content%}
+<fieldset style="width:800px; margin-left:325px;border-radius:10px; box-shadow: 5px 10px 18px grey; margin-top:100px;text-align:center;">
+<legend style="margin-left:42%"><h1>RESULT</h1></legend>
+    <h2 style="font-size:30px; font-family:Century Gothic">
+      Your Score is: {{ score }} / {{ total }}
+    </h2>
+    {% if flag == 0 %}
+     <h2 style="color:red; font-family:Century Gothic; font-size:30px;"> you have not attempted quiz </h2>
+     <h2></h2><a href="/quiz" style = "text-decoration: none;color:rgb(0, 140, 255); font-family:Century Gothic; font-size:30px;" > <b>Re-attempt</b></a></h2>
+    {% else %}
+      <h2
+      {% if eff < 50.0 %} style="color:red; font-family:Century Gothic; font-size:30px;"
+      {% else %} style="color:green; font-family:Century Gothic; font-size:30px;"
+      {% endif %}
+      >
+        Your Efficiency is: {{ eff }} %
+      </h2>
+    {% endif %}
+    
+    
+	</fieldset>
+{% endblock%}
